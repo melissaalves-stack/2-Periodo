@@ -1,0 +1,234 @@
+# Trabalho Prático 1 - Reconhecimento de Palíndromos
+
+**Disciplina:** DCE792 - AEDS 2  
+**Universidade:** UNIFAL-MG  
+**Professor:** Iago Augusto de Carvalho  
+**Data:** 23/09/2025
+
+**Integrantes:**
+- MELISSA ALVES
+- JULIA ROCHA
+- MELL DIAS
+---
+
+## 1. Introdução
+
+Um palíndromo é uma palavra, frase ou número que permanece igual quando lida de trás para diante. Por extensão, palíndromo é qualquer série de elementos com simetria linear, ou seja, que apresenta a mesma sequência de unidades nos dois sentidos.
+
+Em nosso conceito de palíndromo, consideramos como unidade a letra, desconsiderando acentos, diacríticos (til, cedilha), sinais de pontuação e espaços entre as palavras. Assim, expressões como "Ana", "Roma me tem amor" e "12/3/21" são reconhecidas como palíndromos válidos.
+
+O objetivo deste trabalho é desenvolver um algoritmo eficiente que, dada uma sequência de strings em um arquivo de entrada, determine quais são palíndromos, utilizando apenas as estruturas de dados fundamentais estudadas na disciplina.
+---
+
+## 2. Estruturas de Dados
+
+### 2.1 Pilha (Stack)
+
+A estrutura principal utilizada em nossa solução é a **pilha**, implementada como uma lista ligada. Uma pilha é uma estrutura de dados que segue o princípio LIFO (Last In, First Out), onde o último elemento inserido é o primeiro a ser removido.
+
+**Estrutura da Pilha:**
+```c
+typedef struct Node {
+    char data;
+    struct Node* next;
+} Node;
+
+typedef struct {
+    Node* top;
+    int size;
+} Stack;
+```
+
+**Operações Implementadas:**
+- **createStack()**: Cria uma pilha vazia
+- **push(stack, data)**: Insere um elemento no topo da pilha
+- **pop(stack)**: Remove e retorna o elemento do topo
+- **isEmpty(stack)**: Verifica se a pilha está vazia
+- **freeStack(stack)**: Libera a memória alocada
+
+### 2.2 Justificativa da Escolha
+
+A pilha foi escolhida como estrutura principal pois sua característica LIFO é ideal para verificar palíndromos:
+1. Podemos empilhar a primeira metade dos caracteres
+2. Ao desempilhar, obtemos os caracteres em ordem reversa
+3. Comparamos com a segunda metade da string original
+4. Se todas as comparações coincidirem, temos um palíndromo
+
+Esta abordagem evita o uso direto de algoritmos de string que percorrem a palavra em ordem inversa, atendendo às restrições do trabalho.
+---
+
+## 3. Algoritmos
+
+### 3.1 Algoritmo Principal
+
+O algoritmo desenvolvido segue os seguintes passos:
+
+1. **Pré-processamento da string:**
+   - Remove acentos e diacríticos
+   - Converte para minúsculas
+   - Filtra apenas letras e números
+   - Ignora espaços e pontuação
+
+2. **Verificação de palíndromo:**
+   - Calcula o ponto médio da string processada
+   - Empilha a primeira metade dos caracteres
+   - Para strings de tamanho ímpar, ignora o caractere central
+   - Compara a segunda metade com os elementos desempilhados
+
+3. **Retorno do resultado:**
+   - Retorna 1 se é palíndromo
+   - Retorna 0 caso contrário
+
+### 3.2 Função isPalindrome
+```c
+int isPalindrome(const char* input) {
+    int processedLength;
+    char* processed = processString(input, &processedLength);
+    
+    if (processedLength <= 1) {
+        free(processed);
+        return 1;
+    }
+    
+    Stack* stack = createStack();
+    int middle = processedLength / 2;
+    
+    // Empilha primeira metade
+    for (int i = 0; i < middle; i++) {
+        push(stack, processed[i]);
+    }
+    
+    // Define início da segunda metade
+    int startIndex = (processedLength % 2 == 0) ? middle : middle + 1;
+    
+    // Compara segunda metade com a pilha
+    for (int i = startIndex; i < processedLength; i++) {
+        if (isEmpty(stack) || pop(stack) != processed[i]) {
+            freeStack(stack);
+            free(processed);
+            return 0;
+        }
+    }
+    
+    int result = isEmpty(stack) ? 1 : 0;
+    freeStack(stack);
+    free(processed);
+    return result;
+}
+```
+
+### 3.3 Análise de Complexidade
+
+**Complexidade de Tempo:**
+- **Pré-processamento:** O(n), onde n é o tamanho da string original
+- **Empilhamento:** O(n/2) para empilhar metade dos caracteres
+- **Comparação:** O(n/2) para comparar com a segunda metade
+- **Complexidade Total:** O(n)
+
+**Complexidade de Espaço:**
+- **Pilha:** O(n/2) no pior caso, para armazenar metade dos caracteres
+- **String processada:** O(n) para armazenar a versão normalizada
+- **Complexidade Total:** O(n)
+
+O algoritmo é **linear** tanto em tempo quanto em espaço, o que é ótimo para o problema de reconhecimento de palíndromos. A utilização da pilha não adiciona overhead significativo, mantendo a eficiência do algoritmo.
+
+### 3.4 Casos Especiais Tratados
+
+- **Strings vazias:** Consideradas palíndromos (retorna 1)
+- **Strings com 1 caractere:** Sempre palíndromos
+- **Strings com tamanho par:** Compara exatamente metade com metade
+- **Strings com tamanho ímpar:** Ignora o caractere central
+- **Caracteres especiais:** Removidos durante pré-processamento
+---
+
+## 4. Descrição do Makefile e Instruções para Compilação
+
+### 4.1 Estrutura do Makefile
+
+O Makefile criado oferece diversas opções para compilação e execução do programa:
+
+**Variáveis Configuradas:**
+- `CC = gcc`: Compilador utilizado
+- `CFLAGS = -Wall -Wextra -std=c99 -g`: Flags de compilação para warnings e debug
+- `TARGET = palindrome_checker`: Nome do executável
+- `SOURCE = palindrome_checker.c`: Arquivo fonte
+
+### 4.2 Comandos Disponíveis
+
+**Compilação:**
+```bash
+make
+# ou
+make all
+```
+
+**Limpeza:**
+```bash
+make clean
+```
+
+**Execução com arquivo de teste:**
+```bash
+make run
+```
+
+**Execução com arquivo personalizado:**
+```bash
+make test FILE=meu_arquivo.txt
+```
+
+**Ajuda:**
+```bash
+make help
+```
+
+### 4.3 Instruções Detalhadas de Compilação
+
+1. **Compilação manual:**
+```bash
+gcc -Wall -Wextra -std=c99 -g -o palindrome_checker palindrome_checker.c
+```
+
+2. **Execução:**
+```bash
+./palindrome_checker entrada.txt
+```
+
+3. **Compilação e execução com Makefile:**
+```bash
+make          # Compila o programa
+make run      # Compila e executa com arquivo de teste
+```
+
+### 4.4 Formato de Entrada e Saída
+
+**Entrada:** Arquivo de texto com uma expressão por linha  
+**Saída:** Formato CSV com duas colunas separadas por vírgula:
+```
+Entrada,Saída
+Ana,1
+Maria,0
+12/3/21,1
+```
+
+### 4.5 Dependências
+
+- **Compilador:** GCC (GNU Compiler Collection)
+- **Sistema:** Linux/Unix ou Windows com ferramentas GNU
+- **Bibliotecas:** Apenas bibliotecas padrão do C (stdio.h, stdlib.h, string.h, ctype.h)
+---
+
+## 5. Conclusão
+
+O trabalho foi desenvolvido implementando um algoritmo eficiente para reconhecimento de palíndromos utilizando exclusivamente estruturas de dados básicas. A escolha da pilha como estrutura principal mostrou-se adequada, permitindo uma solução elegante e eficiente.
+
+O algoritmo apresenta complexidade linear O(n), tanto em tempo quanto em espaço, tornando-o adequado para processar grandes volumes de dados. O tratamento de casos especiais e a normalização de caracteres garantem robustez na identificação de palíndromos.
+
+A implementação atende a todos os requisitos especificados:
+- Utiliza apenas estruturas de dados vistas em aula (pilha)
+- Não emprega algoritmos de string diretos
+- Produz saída no formato solicitado
+- Inclui Makefile funcional
+- Código bem documentado e modular
+
+Este projeto demonstra a importância das estruturas de dados fundamentais na resolução de problemas computacionais clássicos, evidenciando como conceitos simples podem ser aplicados de forma criativa e eficiente.
