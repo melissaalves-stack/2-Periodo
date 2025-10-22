@@ -1,7 +1,0 @@
-compilar: make
-
-executar: ./arvore_binaria
-
-compilar e executar: make run
-
-limpar arquivos compilados: make clean
