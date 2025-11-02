@@ -1,27 +1,65 @@
-📚 Repositório - 2º Período de Ciência da Computação
+# 🎓 2º Período - Ciência da Computação
 
-Bem-vindo ao meu repositório de materiais do segundo período do curso de Ciência da Computação na [Nome da sua Universidade]!
+**Repositório acadêmico contendo materiais, projetos e exercícios desenvolvidos durante o segundo período do curso**
 
-Este espaço é dedicado a organizar e documentar meu progresso acadêmico, servindo como um arquivo de notas de aula, códigos-fonte, projetos e listas de exercícios.
+[📖 Sobre](#-sobre) • [📚 Disciplinas](#-disciplinas) • [🗂️ Estrutura](#️-estrutura) • [🚀 Como Usar](#-como-usar) • [📝 Licença](#-licença)
+---
 
+## 📖 Sobre
 
-🎯 Sobre Este Repositório
+Bem-vindo(a) ao meu repositório acadêmico! 👋
 
-O objetivo principal é centralizar todos os materiais de estudo, facilitar a revisão de conteúdos e criar um portfólio de projetos desenvolvidos ao longo do semestre. Sinta-se à vontade para explorar, mas lembre-se que este é um material de estudo pessoal e pode conter anotações em processo de refinamento.
+Este espaço foi criado para:
+- 📝 Organizar e documentar meu progresso acadêmico
+- 💾 Centralizar materiais de estudo e anotações
+- 💻 Armazenar códigos-fonte e projetos desenvolvidos
+- 📋 Facilitar a revisão de conteúdos
+- 🎯 Construir um portfólio de projetos
 
+> **Nota**: Este é um material de estudo pessoal e pode conter anotações em processo de refinamento.
 
-📂 Estrutura das Pastas
+## 🤝 Contribuições
 
-O repositório está organizado em pastas, onde cada pasta corresponde a uma disciplina cursada neste semestre.
+Este é um repositório **primariamente pessoal**, mas contribuições são bem-vindas!
 
+Se você é um colega de classe ou encontrou algum erro, você pode:
 
-🤝 Contribuições
-Este é um repositório primariamente pessoal. No entanto, se você for um colega de classe ou alguém que encontrou um erro em algum código ou anotação, sinta-se à vontade para:
+- 🐛 **Abrir uma Issue**: Para reportar bugs ou sugerir melhorias
+- 🔧 **Enviar um Pull Request**: Com correções ou otimizações
+- 💬 **Compartilhar conhecimento**: Discutir soluções alternativas
 
-Abrir uma Issue (Problema) detalhando o erro.
+### Como Contribuir
+1. Fork este repositório
+2. Crie uma branch para sua feature (`git checkout -b feature/MinhaContribuicao`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/MinhaContribuicao`)
+5. Abra um Pull Request
 
-Enviar um Pull Request (Solicitação de Alteração) com a correção.
+## 📝 Licença
 
+### Código-Fonte
+O conteúdo de código-fonte (implementações de algoritmos, projetos e trabalhos) está disponibilizado sob a [Licença MIT](LICENSE), permitindo uso, cópia, modificação e distribuição.
 
-📜 Licença
-O conteúdo de código-fonte (como implementações de algoritmos e trabalhos) está disponibilizado sob a Licença MIT, a menos que especificado de outra forma. Materiais de aula (slides, PDFs de professores) podem ter direitos autorais de seus respectivos autores.
+### Materiais de Aula
+Materiais didáticos (slides, PDFs, apostilas) pertencem aos seus respectivos autores e professores. Estes materiais são compartilhados apenas para fins educacionais.
+
+## 👤 Autor
+
+**Melissa Alves**
+
+- 💼 GitHub: [@melissaalves-stack](https://github.com/melissaalves-stack)
+- 🎓 Curso: Ciência da Computação - 2º Período
+
+## 🌟 Agradecimentos
+
+- Professores e monitores das disciplinas
+- Colegas de classe pelas discussões e colaborações
+- Comunidade open-source pelos recursos e ferramentas
+
+---
+
+**📌 Mantenha-se atualizado!** Este repositório é frequentemente atualizado com novos materiais e projetos.
+
+⭐ Se este repositório foi útil para você, considere dar uma estrela!
+
+**Última atualização:** Novembro 2024
