@@ -1,6 +1,6 @@
 # 💻 Programação Web - Trabalhos e Atividades
 
-Bem-vindo ao meu repositório de projetos e atividades da disciplina de Programação Web! Aqui você encontrará uma coleção de trabalhos desenvolvidos ao longo do curso, explorando diversas tecnologias e conceitos fundamentais do desenvolvimento web.
+Bem-vindo ao meu repositório de projetos e atividades da disciplina de Programação Web! Aqui você encontrará uma coleção de trabalhos desenvolvidos ao longo do curso, explorando diversas tecnologias e conceitos fundamentais do desenvolvimento web, além de materiais disponibilizados pelo professor ao longo do curso.
 
 ## 📚 Sobre o Repositório
 
@@ -38,5 +38,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ---
 
 ⭐ Se você achou este repositório útil, considere dar uma estrela!
+
 
 💬 Feedbacks e sugestões são sempre bem-vindos!
