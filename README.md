@@ -2,9 +2,6 @@
 
 **Repositório acadêmico contendo materiais, projetos e exercícios desenvolvidos durante o segundo período do curso**
 
-[📖 Sobre](#-sobre) • [📚 Disciplinas](#-disciplinas) • [🗂️ Estrutura](#️-estrutura) • [🚀 Como Usar](#-como-usar) • [📝 Licença](#-licença)
----
-
 ## 📖 Sobre
 
 Bem-vindo(a) ao meu repositório acadêmico! 👋
