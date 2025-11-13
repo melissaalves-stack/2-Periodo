@@ -31,6 +31,12 @@ Repositório contendo implementações práticas de algoritmos e estruturas de d
 * **Fila Circular**: Implementação eficiente usando array circular
 * **Fila com Apontadores**: Implementação usando ponteiros
 
+#### Filas de Prioridade
+* **Vetor Ordenado**: Implementação com inserção ordenada (O(n)) e remoção rápida
+* **Lista Encadeada Ordenada**: Lista ordenada por prioridade com remoção O(1)
+* **Lista Não Ordenada**: Inserção O(1) com busca linear na remoção O(n)
+* **Comparação de Performance**: Análise experimental dos tempos de execução
+
 #### Pilhas
 * **Pilha com Lista Encadeada**: Estrutura LIFO (Last In, First Out) usando ponteiros
 
@@ -97,6 +103,7 @@ TRABALHOS E ATIVIDADES DE AEDs PRATICA/
 ├── atividade de listas duplamente encadeadas/
 ├── atividade de filas circulares/
 ├── atividade de filas com apontadores/
+├── atividade de filas de prioridade/
 ├── atividade de pilhas/
 ├── atividade de percurso em arvores binarias/
 ├── atividade de remoção em arvores binarias/
@@ -116,6 +123,7 @@ TRABALHOS E ATIVIDADES DE AEDs PRATICA/
 * ✅ Gerenciamento adequado de memória
 * ✅ Análise de complexidade implementada
 * ✅ Testes de performance para algoritmos de ordenação
+* ✅ Comparação experimental de estruturas de dados
 
 ## 🎯 Objetivos de Aprendizado
 
@@ -130,6 +138,7 @@ Este repositório demonstra compreensão de:
 * Ordenação interna vs. externa
 * Manipulação de arquivos em C
 * Otimização de performance
+* Trade-offs entre diferentes implementações
 
 ## 📊 Análise de Complexidade
 
@@ -147,6 +156,17 @@ Este repositório demonstra compreensão de:
 | Radix Sort | O(d × n) | O(d × n) | O(d × n) | O(n + k) | ✅ |
 | Bucket Sort | O(n + k) | O(n + k) | O(n²) | O(n) | ✅ |
 
+### Filas de Prioridade Implementadas
+
+| Implementação | Inserção | Remoção | Espaço | Melhor Para |
+|---------------|----------|---------|--------|-------------|
+| Vetor Ordenado | O(n) | O(n) | O(n) | Poucas operações |
+| Lista Encadeada Ordenada | O(n) | O(1) | O(n) | Muitas remoções |
+| Lista Não Ordenada | O(1) | O(n) | O(n) | Muitas inserções |
+| Heap (futuro) | O(log n) | O(log n) | O(n) | Balanceado |
+
+**Observação**: A implementação com Heap será abordada em aulas futuras e oferece o melhor trade-off entre inserção e remoção.
+
 ## 📝 Notas
 
 * Todos os códigos foram desenvolvidos em **C**
@@ -154,6 +174,7 @@ Este repositório demonstra compreensão de:
 * Cada estrutura de dados possui operações básicas implementadas (inserir, remover, buscar, imprimir)
 * Trabalhos incluem **documentação técnica** e análise de resultados
 * Implementações de ordenação incluem **comparação de performance**
+* Filas de prioridade incluem **análise experimental** comparando as três implementações
 
 ## 🤝 Contribuições
 
